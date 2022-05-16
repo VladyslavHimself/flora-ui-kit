@@ -1,15 +1,22 @@
 {
   "name": "flora-ui-kit",
   "version": "1.0.0",
-  "description": "",
+  "description": "React Ui custom presets",
   "main": "index.js",
+  "url": "https://github.com/VladyslavHimself/flora-ui-kit",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "green",
+    "ui-kit"
+  ],
+  "author": "Vlad Lutchyn<vladyslav.lutchyn@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.10",
