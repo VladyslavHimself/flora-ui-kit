@@ -1,6 +1,17 @@
-import React from "react";
+/// <reference types="react" />
 import "./button.scss";
+import "../styles/globals.scss";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-declare const _default: ComponentMeta<React.FC<import("./Button").ButtonProps>>;
+declare const _default: ComponentMeta<{
+    ({ children, variant, className, ...props }: import("./Button").IButtonProps): JSX.Element;
+    defaultProps: {
+        variant: string;
+    };
+}>;
 export default _default;
-export declare const Primary: ComponentStory<React.FC<import("./Button").ButtonProps>>;
+export declare const Default: ComponentStory<{
+    ({ children, variant, className, ...props }: import("./Button").IButtonProps): JSX.Element;
+    defaultProps: {
+        variant: string;
+    };
+}>;

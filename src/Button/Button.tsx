@@ -1,20 +1,27 @@
-import React, { FC } from "react";
-
+import React from "react";
 import "./button.scss";
 
-export interface ButtonProps {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant: "success" | "danger";
+  variant?: "primary" | "secondary" | "ghost";
 }
 
-export const Button: FC<ButtonProps> = ({ children, variant, ...props }) => {
+export const Button = ({
+  children,
+  variant,
+  className,
+  ...props
+}: IButtonProps) => {
+  const buttonClasses = ["button", className];
+  variant && buttonClasses.push(variant);
+
   return (
-    <button
-      style={variant === "success" ? { backgroundColor: "green" } : undefined}
-      className="button"
-      {...props}
-    >
+    <button {...props} className={buttonClasses.join(" ")}>
       {children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  variant: "success",
 };

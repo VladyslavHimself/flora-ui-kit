@@ -1,7 +1,12 @@
-import React, { FC } from "react";
+import React from "react";
 import "./button.scss";
-export interface ButtonProps {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    variant: "success" | "danger";
+    variant?: "primary" | "secondary" | "ghost";
 }
-export declare const Button: FC<ButtonProps>;
+export declare const Button: {
+    ({ children, variant, className, ...props }: IButtonProps): JSX.Element;
+    defaultProps: {
+        variant: string;
+    };
+};
